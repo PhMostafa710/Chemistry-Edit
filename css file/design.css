@@ -16,6 +16,142 @@
 }
 
 /* Start Variables */
+
+body {
+    position: relative;
+}
+
+body .opacity-0 {
+    opacity: 0;
+    animation: opacity 3s 4s linear forwards;
+}
+
+@keyframes opacity {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+
+body .center-icon   {
+    z-index: 10;
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+}
+
+body .center-icon .icon-content {    
+    opacity: .3;
+    animation: opacity-change 5s linear forwards;
+}
+
+@keyframes  opacity-change{
+    0% {
+        opacity: .5;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+body .center-icon  .icon {
+    width: 400px;
+    transition: .8s;
+    position: fixed;
+    left: 35%;
+    top: 50%;
+    transform: translate(-50% , -50%);
+    padding: 20px;
+    height: 55px;
+}
+
+@media (max-width:767px) {
+    body .center-icon  .icon {
+        width: 300px;
+        left: 15%;
+    }
+}
+
+body .center-icon .icon:first-child {
+    border: 3px solid #14b8a6;
+    border-radius: 50%;
+    background-color: transparent;
+    transform: rotate(33deg);
+    z-index: 100;
+}
+
+body .center-icon .icon:first-child::before {
+    content: "";
+    position: absolute;
+    right: -5px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    border-radius: 50%;
+    animation-name: turn;
+    animation-duration: 2.25s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes  turn{
+    0% {
+        right: -5px;
+        top: 50%;
+        background-color: white;
+    }    
+
+    25% {
+        right: 50%;
+        top: 0;
+        background-color: #06b6d4;
+    }
+
+    50% {
+        right: calc(100% - 5px);
+        top: 50%;
+        background-color: #14b8a6;
+    }
+
+    75% {
+        right: 50%;
+        top: 100%;
+        background-color: #41ec46;
+    }
+
+    100% {
+        right: -5px;
+        top: 50%;
+    }
+    
+} 
+
+body .center-icon .icon:nth-child(2) {
+    border: 3px solid #14b8a6;
+    border-radius: 50%;
+    background-color: transparent;
+    transform: rotate(-33deg);
+}
+
+body .center-icon .icon:last-child {
+    border: 3px solid #41ec46;
+    border-radius: 50%;
+    background-color: transparent;
+    transform: rotate(90deg);
+}
+
+
 * {
     padding: 0;
     margin: 0;
@@ -249,7 +385,7 @@ header .container .links:hover .right-icon .icon:first-child::before {
     animation-iteration-count: infinite;
 }
 
-@keyframes turn {
+/* @keyframes  {
     0% {
         right: -5px;
         top: 50%;
@@ -278,7 +414,7 @@ header .container .links:hover .right-icon .icon:first-child::before {
         top: 50%;
     }
     
-} 
+}  */
 
 header .container .links:hover .right-icon .icon:nth-child(2) {
     border: 3px solid #14b8a6;
